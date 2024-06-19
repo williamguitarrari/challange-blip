@@ -2,9 +2,9 @@ const axios = require('axios');
 
 exports.handler = async (event, context) => {
   try {
-    const userOrOrg = 'takenet';
+    const userOrg = 'takenet';
     const maxRepos = 5;
-    const response = await axios.get(`https://api.github.com/users/${userOrOrg}/repos`, {
+    const response = await axios.get(`https://api.github.com/users/${userOrg}/repos`, {
       params: {
         per_page: 100,
         sort: 'created',
@@ -18,7 +18,6 @@ exports.handler = async (event, context) => {
 
     const oldestCSharpRepos = csharpRepos.slice(0, maxRepos);
 
-    // Criar um array com os dados desejados
     const repoData = oldestCSharpRepos.map(repo => ({
       repository: repo.full_name,
       description: repo.description
