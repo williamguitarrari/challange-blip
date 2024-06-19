@@ -1,1 +1,2 @@
-Serviço utilizado para publicar a API -> AWS LAMBDA
+Serviço utilizado para publicar a API 
+- AWS LAMBDA
